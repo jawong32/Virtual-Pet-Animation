@@ -17,13 +17,13 @@ void draw() {
   ears();
   eyes(light);
   horns();
-  eyebrows(light);
+  eyebrows(light/5-10);
   printCoordinates();
   System.out.println(light);
 }
 
 int lightLevel() {
-  if (arduino.analogRead(5) < 20) {
+  if (arduino.analogRead(5) < 50) {
     return 50;
   }
   if (arduino.analogRead(5) > 230) {
@@ -53,13 +53,13 @@ void ears() {
   rotate(radians(-30));
 }
 
-void eyes(int lightLevel) {
+void eyes(int light) {
   fill(255, 255, 255);
   ellipse(215, 350, 40, 40);
   ellipse(285, 350, 40, 40);
   fill(0);
-  ellipse(215, 350, lightLevel / 8, lightLevel / 8);
-  ellipse(285, 350, lightLevel / 8, lightLevel / 8);
+  ellipse(215, 350, light / 8, light / 8);
+  ellipse(285, 350, light / 8, light / 8);
 }
 
 void horns() {
@@ -73,12 +73,12 @@ void horns() {
   ellipse(340, 270, 30, 90);
 }
 
-void eyebrows(int lightLevel) {
+void eyebrows(int light) {
   fill(30);
-  //quad(188, 301, 233, 313, 238, 325, 190, 317);
-  //quad(302, 301, 267, 313, 262, 325, 310, 317);
-  quad(188, 301, 233, 313, 238, 325, 190, 317);
-  quad(302, 301, 267, 313, 262, 325, 310, 317);
+  quad(188, 315-light, 233, 325-light, 238, 340-light, 190, 330-light);
+  quad(302, 315-light, 267, 325-light, 262, 340-light, 310, 330-light);
+  //quad(188, light, 233, light + 12, 238, light + 24, 190, light + 16);
+  //quad(302, light, 267, light + 12, 262, light + 24, 310, light + 16);
 }
 
 void printCoordinates() {
