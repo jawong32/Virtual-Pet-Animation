@@ -19,7 +19,6 @@ void draw() {
   horns();
   eyebrows(light/5-10);
   printCoordinates();
-  System.out.println(light);
 }
 
 int lightLevel() {
@@ -77,8 +76,6 @@ void eyebrows(int light) {
   fill(30);
   quad(188, 315-light, 233, 325-light, 238, 340-light, 190, 330-light);
   quad(302, 315-light, 267, 325-light, 262, 340-light, 310, 330-light);
-  //quad(188, light, 233, light + 12, 238, light + 24, 190, light + 16);
-  //quad(302, light, 267, light + 12, 262, light + 24, 310, light + 16);
 }
 
 void printCoordinates() {
