@@ -1,4 +1,4 @@
-![](Penguin.JPG)   
+![](arduino.gif)   
 Virtual Pet
 =============
 
